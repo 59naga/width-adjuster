@@ -5,7 +5,7 @@
 
 ![width-adjuster](https://cloud.githubusercontent.com/assets/1548478/15989441/7cd6121c-30b1-11e6-8333-feca102ec238.gif)
 
-:beginner: usage
+:beginner: Usage
 ---
 * `git clone https://github.com/59naga/width-adjuster`
 * `cd width-adjuster`
@@ -16,13 +16,6 @@
 * `open http://localhost:8000/`
 * show dev console, type to `localStorage.setItem('width-adjuster', 'http://example.com')`
 * have fun! :+1:
-
-:wind_chime: Available npm-scripts
----
-* `npm start`
-  ship `src` to `release` for each `js`,`pug`,`styl`. live compiling(ignore add file) and live-reload
-* `npm run build`
-  ship `src` to `release`. without live
 
 :wrench: Development
 ---
@@ -37,6 +30,13 @@ npm install
 
 npm start
 ```
+
+:wind_chime: Available npm-scripts
+---
+* `npm start`
+  ship `src` to `release` for each `js`,`pug`,`styl`. live compiling(ignore add file) and live-reload
+* `npm run build`
+  ship `src` to `release`. without live
 
 <br><br>
 <p align="right">
