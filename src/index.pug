@@ -1,0 +1,27 @@
+doctype html
+html
+  head
+    meta(charset="UTF-8")
+    script(src="index.js")
+    link(rel="stylesheet" href="index.css")
+
+  body
+    main#root
+      .resizable-header
+        input(v-model='width', autofocus='')
+        | px
+        button(v-on:click='resize($event, 320)') xs
+        button(v-on:click='resize($event, 640)') sm
+        button(v-on:click='resize($event, 1080)') md
+        button(v-on:click='resize($event, 1440)') lg
+        button(v-on:click='resize') full
+        
+      .resizable
+        iframe(
+          v-bind:class="[dragging ? 'disable': '']"
+          v-bind:style="{'min-width': width + 'px', 'max-width': width + 'px'}"
+          v-bind:src="iframeSrc"
+        )
+          | loading...
+        
+        .resizable-pull(@mousedown='startDrag')

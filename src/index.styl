@@ -1,0 +1,67 @@
+@import 'sanitize'
+
+html
+body
+main
+#app
+  display block
+  margin 0
+  padding 0
+  height 100%
+
+#root
+  .resizable-header
+    position fixed
+    z-index 100
+    width 100%
+    height 2em
+    padding .25em
+    text-align center
+    color grey
+    background-color black
+
+    button
+      display inline-block
+      min-width 2em
+      margin 0 .25em
+
+  .resizable-header
+  .resizable-header *
+    font-size 1.5rem
+    font-family Monaco, monospace
+
+  .resizable-header input:not([type])
+    width 4em
+    text-align right
+
+  .resizable
+    display flex
+    align-items stretch
+    height 100%
+    padding-top 3rem
+    background-color #ddd
+    overflow scroll
+    -webkit-overflow-scrolling touch
+
+    > *:first-child
+      margin-left auto
+
+    > *:last-child
+      margin-right auto
+
+  .resizable iframe
+    border 0
+    flex 1
+    height 100%
+    background-color white
+    transition min-width .5s ease-in-out
+
+  .resizable iframe.disable
+    pointer-events none
+    transition none
+
+  .resizable .resizable-pull
+    min-width 1em
+    max-width 1em
+    background-color grey
+    cursor col-resize
