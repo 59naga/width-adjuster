@@ -19,6 +19,7 @@
     "babel-preset-stage-1": "^6.5.0",
     "babel-register": "^6.9.0",
     "live-server": "^1.0.0",
+    "mkdirp": "^0.5.1",
     "pug-cli": "^1.0.0-alpha6",
     "reify": "^0.2.3",
     "sanitize.css": "^3.3.0",

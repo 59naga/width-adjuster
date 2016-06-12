@@ -1,9 +1,12 @@
-import fs from 'fs'
-import path from 'path'
+import {readFileSync, writeFileSync} from 'fs'
+import {dirname} from 'path'
+import mkdirp from 'mkdirp'
 import stylus from 'stylus'
 import autoprefixer from 'autoprefixer-stylus'
 
-const sanitizeStylDir = path.dirname(require.resolve('sanitize.css/lib/sanitize.styl'))
+const entry = 'src/index.styl'
+const outfile = 'release/index.css'
+const sanitizeStylDir = dirname(require.resolve('sanitize.css/lib/sanitize.styl'))
 const stylusPaths = [
   __dirname,
   `${__dirname}/src`,
@@ -13,26 +16,20 @@ const stylusPaths = [
 const isProduction = process.env.NODE_ENV === 'production'
 const isDevelopment = !isProduction
 
-export default (filename) => {
-  const data = fs.readFileSync(filename, 'utf8')
+const data = readFileSync(entry, 'utf8')
+const options = {
+  compress: isProduction,
+  sourcemap: isDevelopment ? {inline: true} : {}
+}
 
-  const options = {
-    filename,
-    compress: isProduction,
-    sourcemap: isDevelopment ? {inline: true} : {}
+stylus(data, options)
+.set('paths', stylusPaths)
+.use(autoprefixer())
+.render((error, css) => {
+  if (error) {
+    throw error
   }
 
-  let css
-  stylus(data, options)
-  .set('paths', stylusPaths)
-  .use(autoprefixer())
-  .render((error, data) => {
-    if (error) {
-      throw error
-    }
-
-    css = data
-  })
-
-  return css
-}
+  mkdirp(dirname(outfile))
+  writeFileSync(outfile, css)
+})
