@@ -5,6 +5,15 @@
 
 ![width-adjuster](https://cloud.githubusercontent.com/assets/1548478/15989441/7cd6121c-30b1-11e6-8333-feca102ec238.gif)
 
+Usage
+---
+* `npm run build`
+* `cd release`
+* `python -m SimpleHTTPServer`
+* `open http://localhost:8000/`
+* show dev console, type to `localStorage.setItem('width-adjuster', 'http://example.com')`
+* have fun! :+1:
+
 :wind_chime: Available npm-scripts
 ---
 * `npm start`
