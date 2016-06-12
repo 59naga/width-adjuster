@@ -5,8 +5,11 @@
 
 ![width-adjuster](https://cloud.githubusercontent.com/assets/1548478/15989441/7cd6121c-30b1-11e6-8333-feca102ec238.gif)
 
-Usage
+:beginner: usage
 ---
+* `git clone https://github.com/59naga/width-adjuster`
+* `cd width-adjuster`
+* `npm install`
 * `npm run build`
 * `cd release`
 * `python -m SimpleHTTPServer`
