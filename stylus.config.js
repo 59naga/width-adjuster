@@ -18,6 +18,7 @@ const isDevelopment = !isProduction
 
 const data = readFileSync(entry, 'utf8')
 const options = {
+  filename: entry,
   compress: isProduction,
   sourcemap: isDevelopment ? {inline: true} : {}
 }
