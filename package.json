@@ -1,4 +1,5 @@
 {
+  "private": true,
   "scripts": {
     "start": "abby server:* \"build:* -- --watch\"",
     "server:live": "live-server release --port=59798",
