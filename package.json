@@ -1,4 +1,11 @@
 {
+  "name": "width-adjuster",
+  "version": "0.0.0",
+  "description": ":package: Width adjuster ---",
+  "main": "release/width-adjuster.html",
+  "lib": [
+    "release/width-adjuster.html"
+  ],
   "private": true,
   "scripts": {
     "start": "abby server:* \"build:* -- --watch\" --log",
@@ -6,7 +13,8 @@
     "build": "abby build:* --env",
     "build:js": "webpack",
     "build:pug": "pug src --out release --obj pug.config.js",
-    "build:styl": "abby \"node --require reify stylus.config.js\""
+    "build:styl": "abby \"node --require reify stylus.config.js\"",
+    "postbuild": "abby \"webpack --config webpack.unify.js\" --env"
   },
   "devDependencies": {
     "abigail": "^1.9.0",
@@ -24,12 +32,17 @@
     "eslint-plugin-import": "^1.8.1",
     "eslint-plugin-promise": "^1.3.2",
     "eslint-plugin-standard": "^1.3.2",
+    "html-loader": "^0.4.3",
+    "html-webpack-plugin": "^2.21.0",
+    "jade": "^1.11.0",
+    "jade-html-loader": "^0.0.3",
     "live-server": "^1.0.0",
     "mkdirp": "^0.5.1",
     "pug-cli": "^1.0.0-alpha6",
     "reify": "^0.2.3",
     "sanitize.css": "^3.3.0",
     "stylus": "^0.54.5",
+    "url-loader": "^0.5.7",
     "vue": "^1.0.24",
     "webpack": "^1.13.1"
   },
@@ -44,5 +57,16 @@
         "value": "src/**/*.styl"
       }
     }
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/59naga/width-adjuster.git"
+  },
+  "keywords": [],
+  "author": "59naga <i59naga@icloud.com> (http://berabou.me/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/59naga/width-adjuster/issues"
+  },
+  "homepage": "https://github.com/59naga/width-adjuster#readme"
 }

@@ -2,8 +2,9 @@ doctype html
 html
   head
     meta(charset="UTF-8")
-    script(src="index.js")
-    link(rel="stylesheet" href="index.css")
+    
+    script(src=process.env.NODE_ENV==='production'?'../release/index.js':'index.js')
+    link(href=process.env.NODE_ENV==='production'?'../release/index.css':'index.css' rel="stylesheet" )
 
   body
     main#root

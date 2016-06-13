@@ -14,13 +14,12 @@ const stylusPaths = [
 ]
 
 const isProduction = process.env.NODE_ENV === 'production'
-const isDevelopment = !isProduction
 
 const data = readFileSync(entry, 'utf8')
 const options = {
   filename: entry,
   compress: isProduction,
-  sourcemap: isDevelopment ? {inline: true} : {}
+  sourcemap: {inline: true}
 }
 
 stylus(data, options)

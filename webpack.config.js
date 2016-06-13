@@ -23,7 +23,7 @@ switch (process.env.NODE_ENV) {
       new webpack.optimize.UglifyJsPlugin({ compress: { warnings: false } })
     ]
 
-    config.devtool = '#source-map'
+    config.devtool = 'inline-source-map'
     break
 
   default:
