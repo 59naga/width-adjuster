@@ -13,7 +13,7 @@
 * `npm run build`
 * `cd release`
 * `python -m SimpleHTTPServer`
-* `open http://localhost:8000/`
+* `open http://localhost:59798/width-adjuster.html`
 * show dev console, type to `localStorage.setItem('width-adjuster', 'http://example.com')`
 * have fun! :+1:
 
@@ -36,7 +36,7 @@ npm start
 * `npm start`
   ship `src` to `release` for each `js`,`pug`,`styl`. live compiling(ignore add file) and live-reload
 * `npm run build`
-  ship `src` to `release`. without live
+  ship `src` to `release`. without live, compression, unify to `width-adjuster-html`.
 
 <br><br>
 <p align="right">
