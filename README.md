@@ -7,12 +7,8 @@
 
 :beginner: Usage
 ---
-* `git clone https://github.com/59naga/width-adjuster`
-* `cd width-adjuster`
-* `npm install`
-* `npm run build`
-* `cd release`
-* `python -m SimpleHTTPServer`
+* download [latest release](https://github.com/59naga/width-adjuster/releases) `width-adjuster.html`
+* `python -m SimpleHTTPServer 59798`
 * `open http://localhost:59798/width-adjuster.html`
 * show dev console, type to `localStorage.setItem('width-adjuster', 'http://example.com')`
 * have fun! :+1:
