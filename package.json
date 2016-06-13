@@ -14,7 +14,7 @@
     "build:js": "webpack",
     "build:pug": "pug src --out release --obj pug.config.js",
     "build:styl": "abby \"node --require reify stylus.config.js\"",
-    "postbuild": "abby \"webpack --config webpack.unify.js\" --env"
+    "postbuild": "abby \"webpack --config webpack.unite-as-html.js\" --env"
   },
   "devDependencies": {
     "abigail": "^1.9.0",
